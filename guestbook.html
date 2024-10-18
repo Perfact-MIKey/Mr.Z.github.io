@@ -1,0 +1,60 @@
+<guestbook html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles5.css">
+</head>
+<body>
+    <header>
+        <h2>访客留言簿</h2>
+        <nav>
+            <ul>
+                <li><img src="GIF2/x5.jpg" alt="用户头像" width="50" height="50" ></li>
+                <li><a href="index.html">主页</a></li>   
+                <li><a href="logs.html">日志</a></li>
+                <li><a href="gallery.html">相册</a></li>
+                <li><a href="updates.html">动态</a></li>
+                <li><a href="guestbook.html">访客记录</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="text-over-image">这是Mr.Z的访客记录
+        <p> <ul>
+                <li>如果你有想说的话可以写在这里。</li>
+                <li>This is Mr.Z's visitor record.</ li>
+                <li>If you have anything to say, you can write it down here.</ li>
+                </ul></p>
+        <p><script>
+        function addMessage() {
+            var message = document.getElementById('message').value;
+            var timestamp = new Date().toLocaleString();
+            var container = document.getElementById('messages-container');
+ 
+            // 创建新的留言元素
+            var newMessage = document.createElement('div');
+            newMessage.innerHTML = '<p>' + message + '</p><p style="font-size: smaller;">' + timestamp + '</p>';
+ 
+            // 将新留言添加到容器中
+            container.appendChild(newMessage);
+ 
+            // 清空输入框
+            document.getElementById('message').value = '';
+        }
+    </script>
+        <p><div id="messages-container" style="margin-bottom: 20px;">
+               <!-- 留言将被添加到这里 -->
+               </div>
+ 
+               <input type="text" id="message" placeholder="输入留言" />
+               <button onclick="addMessage()">留言</button></p>
+        <p><img src="GIF2/x7.gif" alt="无法显示"/></p>
+        </div>
+    </main>
+     
+    <footer>
+        <p>&copy; Mr.Z的个人博客</p>
+    </footer>
+</body>
+</html>

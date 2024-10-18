@@ -1,0 +1,74 @@
+<gallery html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles3.css">
+     <style>
+        .gallery1 {
+          position: relative;
+          width: 1680px;
+          height: 800px;
+          margin: auto;
+          }
+        .gallery1 img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          opacity: 0;
+          transition: opacity 0.7s ease;
+          }
+        .gallery1 img.active {
+          opacity: 1;
+          }
+     </style>
+</head>
+<body>
+    <header>
+        <h2>我的相册</h2>
+        <nav>
+            <ul>
+                <li><img src="GIF2/x5.jpg" alt="用户头像" width="50" height="50" ></li>
+                <li><a href="index.html">主页</a></li>   
+                <li><a href="logs.html">日志</a></li>
+                <li><a href="gallery.html">相册</a></li>
+                <li><a href="updates.html">动态</a></li>
+                <li><a href="guestbook.html">访客记录</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="text-over-image">这是Mr.Z的相册。
+        <p>他总是喜欢收集些稀奇古怪的照片。</p>
+        <p>This is Mr.Z's photo album.
+        <p>He always likes to collect some strange photos.</p>
+         <div class="gallery1">
+           <img class="active" src="GIF2/x1.gif">
+           <img src="GIF2/x2.gif">
+           <img src="GIF2/x3.gif">
+           <img src="GIF2/x4.jpg">
+           <img src="GIF2/x5.jpg">
+           <!-- 更多图片 -->
+         </div>
+ 
+         <script>
+             const images = document.querySelectorAll('.gallery1 img');
+             let currentIndex = 0;
+             function changeImage(index) {
+             images.forEach((img, i) => img.className = i === index ? 'active' : '');
+              }
+              setInterval(() => {
+              changeImage(currentIndex);
+              currentIndex = (currentIndex + 1) % images.length;
+              }, 3000); // 图片每3秒切换一次
+          </script>
+        </div>
+    </main>
+     
+     
+    <footer>
+        <p>&copy; Mr.Z的个人博客</p>
+    </footer>
+</body>
+</html>
